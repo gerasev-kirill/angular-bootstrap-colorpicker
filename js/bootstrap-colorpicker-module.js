@@ -1,6 +1,7 @@
 //добавление css в страницу. -1 лишний запрос
 try{
-    !angular.$$csp().noInlineStyle  &&  !angular.$$uibColorpickerCss  &&  angular.element(document).find('head').prepend(CSS_UIB_COLORPICKER_APP);
+    var css = CSS_UIB_COLORPICKER_APP;
+    !angular.$$csp().noInlineStyle  &&  !angular.$$uibColorpickerCss  &&  angular.element(document).find('head').prepend('<style type="text/css">' + css + '</style>');
     angular.$$uibColorpickerCss = true;
 }catch (e){}
 
